@@ -1,11 +1,12 @@
-import {JSX} from "react";
+import {JSX} from 'react';
 //import FilmCard from "../../components/film-card/film-card.tsx";
 
 type WelcomeScreenProps = {
-  name: string,
-  year: string,
-  genre: string
+  name: string;
+  year: string;
+  genre: string;
 }
+
 function WelcomeScreen(props: WelcomeScreenProps): JSX.Element {
   return (
     <>
@@ -41,7 +42,8 @@ function WelcomeScreen(props: WelcomeScreenProps): JSX.Element {
           <div className="film-card__info">
             <div className="film-card__poster">
               <img src="img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218"
-                   height="327"/>
+                height="327"
+              />
             </div>
 
             <div className="film-card__desc">
@@ -153,4 +155,4 @@ function WelcomeScreen(props: WelcomeScreenProps): JSX.Element {
   );
 }
 
-export default WelcomeScreen
+export default WelcomeScreen;

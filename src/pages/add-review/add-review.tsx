@@ -42,7 +42,8 @@ function AddReview() {
 
         <div className="film-card__poster film-card__poster--small">
           <img src="img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218"
-               height="327"/>
+            height="327"
+          />
         </div>
       </div>
 
@@ -84,7 +85,9 @@ function AddReview() {
 
           <div className="add-review__text">
             <textarea className="add-review__textarea" name="review-text" id="review-text"
-                      placeholder="Review text"></textarea>
+              placeholder="Review text"
+            >
+            </textarea>
             <div className="add-review__submit">
               <button className="add-review__btn" type="submit">Post</button>
             </div>
@@ -93,7 +96,7 @@ function AddReview() {
         </form>
       </div>
     </section>
-  )
+  );
 }
 
-export default AddReview
+export default AddReview;

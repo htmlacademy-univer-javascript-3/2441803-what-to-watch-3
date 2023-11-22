@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from "./app/app.tsx";
+import App from './app/app.tsx';
 
 
 const root = ReactDOM.createRoot(
@@ -8,9 +8,9 @@ const root = ReactDOM.createRoot(
 );
 
 const FutureFilm = {
-  name: "The Grand Budapest Hostel",
-  genre: "Drama",
-  year: "2014"
+  name: 'The Grand Budapest Hostel',
+  genre: 'Drama',
+  year: '2014'
 } as const;
 
 root.render(
@@ -18,7 +18,7 @@ root.render(
     <App
       name={FutureFilm.name}
       genre={FutureFilm.genre}
-      year={FutureFilm.genre}
+      year={FutureFilm.year}
     />
   </React.StrictMode>
 );

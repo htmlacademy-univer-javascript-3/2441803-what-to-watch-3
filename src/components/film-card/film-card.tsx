@@ -1,7 +1,7 @@
 type FilmProps = {
-  name: string,
-  srcImage: string,
-  altImage: string
+  name: string;
+  srcImage: string;
+  altImage: string;
 }
 
 function FilmCard(props: FilmProps) {
@@ -14,7 +14,7 @@ function FilmCard(props: FilmProps) {
         <a className="small-film-card__link" href="film-page.html">{props.name}</a>
       </h3>
     </article>
-  )
+  );
 }
 
-export default FilmCard
+export default FilmCard;

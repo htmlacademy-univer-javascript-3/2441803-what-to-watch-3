@@ -24,7 +24,7 @@ function HeadGuest() {
       </header>
 
     </section>
-  )
+  );
 }
 
-export default HeadGuest
+export default HeadGuest;
