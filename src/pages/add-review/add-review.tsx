@@ -1,11 +1,19 @@
 import Logo from '../../components/logo/logo.tsx';
+import {Film} from '../../mocks/films.ts';
+import {useParams} from 'react-router-dom';
 
-function AddReview() {
+type ReviewProps = {
+  films: Film[];
+}
+
+function AddReview(props: ReviewProps) {
+  const { id } = useParams();
+  const movie = (props.films.find((film) => film.id === +(id ?? 1)) ?? props.films[0]);
   return (
     <section className="film-card film-card--full">
       <div className="film-card__header">
         <div className="film-card__bg">
-          <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel"/>
+          <img src={movie.previewImage} alt={movie.altImage}/>
         </div>
 
         <h1 className="visually-hidden">WTW</h1>
@@ -16,7 +24,7 @@ function AddReview() {
           <nav className="breadcrumbs">
             <ul className="breadcrumbs__list">
               <li className="breadcrumbs__item">
-                <a href="film-page.html" className="breadcrumbs__link">The Grand Budapest Hotel</a>
+                <a href="film-page.html" className="breadcrumbs__link">{movie.name}</a>
               </li>
               <li className="breadcrumbs__item">
                 <a className="breadcrumbs__link">Add review</a>
@@ -37,7 +45,7 @@ function AddReview() {
         </header>
 
         <div className="film-card__poster film-card__poster--small">
-          <img src="img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218"
+          <img src={movie.previewImage} alt={movie.altImage} width="218"
             height="327"
           />
         </div>
