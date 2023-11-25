@@ -9,11 +9,13 @@ import NotFound from '../pages/not-found/not-found.tsx';
 import PrivateRoute from '../components/private-route/private-route.tsx';
 import {AuthorizationStatus} from '../components/private-route/AuthorizationStatus.ts';
 import MyList from '../pages/my-list/my-list.tsx';
+import {Film} from '../mocks/films.ts';
 
 type AppScreenProps = {
   name: string;
   year: string;
   genre: string;
+  films: Film[];
 }
 
 function App(props: AppScreenProps) {
@@ -22,7 +24,7 @@ function App(props: AppScreenProps) {
       <Routes>
         <Route
           path={AppRoutes.Main}
-          element={<WelcomeScreen name={props.name} genre={props.genre} year={props.year}/>}
+          element={<WelcomeScreen name={props.name} genre={props.genre} year={props.year} films={props.films}/>}
         />
         <Route
           path={AppRoutes.SignIN}
@@ -30,11 +32,11 @@ function App(props: AppScreenProps) {
         />
         <Route
           path={AppRoutes.AddReview}
-          element={<AddReview/>}
+          element={<AddReview films={props.films}/>}
         />
         <Route
           path={AppRoutes.Film}
-          element={<MoviePage/>}
+          element={<MoviePage films={props.films}/>}
         />
         <Route
           path={AppRoutes.MyList}
@@ -42,7 +44,7 @@ function App(props: AppScreenProps) {
             <PrivateRoute
               authStatus={AuthorizationStatus.Unknown}
             >
-              <MyList/>
+              <MyList films={props.films}/>
             </PrivateRoute>
           }
         />

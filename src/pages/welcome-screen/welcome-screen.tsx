@@ -1,11 +1,13 @@
 import {JSX} from 'react';
 import Logo from '../../components/logo/logo.tsx';
-//import FilmCard from "../../components/film-card/film-card.tsx";
+import FilmList from '../../components/film-list/film-list.tsx';
+import {Film} from '../../mocks/films.ts';
 
 type WelcomeScreenProps = {
   name: string;
   year: string;
   genre: string;
+  films: Film[];
 }
 
 function WelcomeScreen(props: WelcomeScreenProps): JSX.Element {
@@ -104,29 +106,7 @@ function WelcomeScreen(props: WelcomeScreenProps): JSX.Element {
             </li>
           </ul>
 
-          <div className="catalog__films-list">
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-            {/*<FilmCard name={} srcImage={} altImage={}/>*/}
-          </div>
-
+          <FilmList films={props.films}/>
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
           </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './app/app.tsx';
+import {films} from './mocks/films.ts';
 
 
 const root = ReactDOM.createRoot(
@@ -19,6 +20,7 @@ root.render(
       name={FutureFilm.name}
       genre={FutureFilm.genre}
       year={FutureFilm.year}
+      films={films}
     />
   </React.StrictMode>
 );
